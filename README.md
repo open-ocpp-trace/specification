@@ -31,3 +31,14 @@ The format's current definition (v1.1) was designed in
 [shiv3/ocpp-cp-simulator#188](https://github.com/shiv3/ocpp-cp-simulator/issues/188);
 its prose specification lives in that repository's `docs/trace-format.md`
 until it migrates here.
+
+## License
+
+- Specification text (this README and the prose in `docs/`) is licensed under
+  CC-BY-4.0 (`LICENSE-docs`).
+- The schema, fixtures, and conformance tests are licensed under Apache-2.0
+  (`LICENSE`).
+
+Contributions are accepted under the Developer Certificate of Origin; see
+[`CONTRIBUTING.md`](CONTRIBUTING.md). The rationale for this split is recorded
+in [ADR-0001](docs/adr/0001-licensing.md).
