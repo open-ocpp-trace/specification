@@ -128,6 +128,12 @@ function checkRawFidelity(fixture, record, line) {
     if (record.error?.code !== undefined && frame[2] !== record.error.code) {
       problem(fixture, `line ${line}: raw error code contradicts record error.code`);
     }
+    if (record.error?.description !== undefined && frame[3] !== record.error.description) {
+      problem(fixture, `line ${line}: raw error description contradicts record error.description`);
+    }
+    if (record.error?.details !== undefined && !deepEqual(frame[4], record.error.details)) {
+      problem(fixture, `line ${line}: raw error details contradicts record error.details`);
+    }
   }
 }
 
@@ -142,6 +148,7 @@ if (fixtureNames.length === 0) {
 }
 
 for (const name of fixtureNames.sort()) {
+  const problemsBefore = failures;
   const dir = join(fixturesDir, name);
   const lines = readFileSync(join(dir, 'trace.jsonl'), 'utf8').split('\n').filter(Boolean);
   const expected = JSON.parse(readFileSync(join(dir, 'expected.json'), 'utf8'));
@@ -176,7 +183,7 @@ for (const name of fixtureNames.sort()) {
     problem(name, 'recomputed consumer view does not match expected.json');
   }
 
-  if (failures === 0) {
+  if (failures === problemsBefore) {
     console.log(`ok ${name} (${view.counts.records} records, ${view.unansweredCalls.length} unanswered, ${view.orphanResponses.length} orphans)`);
   }
 }

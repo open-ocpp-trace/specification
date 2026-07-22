@@ -30,6 +30,7 @@ Layout per fixture:
 | [`short-session`](./short-session) | 12 | 6 | 6 | 0 | 0 | Full session lasting only a few seconds. |
 | [`heartbeat-irregular`](./heartbeat-irregular) | 8 | 4 | 4 | 0 | 0 | Heartbeat cadence deviates from the interval the CSMS requested. |
 | [`unresponsive-csms`](./unresponsive-csms) | 3 | 2 | 1 | 0 | 1 | BootNotification is never answered; a later Heartbeat is. |
+| [`orphan-response`](./orphan-response) | 3 | 1 | 2 | 0 | 0 | A response whose CALL is not in the trace (capture started mid-session), so it correlates with nothing. |
 
 ## Provenance and properties
 
