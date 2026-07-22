@@ -1,0 +1,13 @@
+{
+  "name": "open-ocpp-trace-specification",
+  "private": true,
+  "type": "module",
+  "description": "Schema, fixtures, and conformance material for the Open OCPP Trace Format",
+  "scripts": {
+    "test": "node conformance/validate.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

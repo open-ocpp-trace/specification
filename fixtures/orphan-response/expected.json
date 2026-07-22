@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.1",
+  "counts": {
+    "records": 3,
+    "calls": 1,
+    "callResults": 2,
+    "callErrors": 0
+  },
+  "records": [
+    {
+      "index": 0,
+      "messageType": "CALL",
+      "messageId": "msg-001",
+      "action": "BootNotification"
+    },
+    {
+      "index": 1,
+      "messageType": "CALLRESULT",
+      "messageId": "msg-001",
+      "action": "BootNotification",
+      "correlatesWith": 0
+    },
+    {
+      "index": 2,
+      "messageType": "CALLRESULT",
+      "messageId": "msg-pre-capture"
+    }
+  ],
+  "unansweredCalls": [],
+  "orphanResponses": [
+    2
+  ]
+}
